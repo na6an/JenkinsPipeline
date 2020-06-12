@@ -15,8 +15,8 @@ pipeline {
                   sh 'tidy -q -e *.html'
               }
          }
-     
-         stage('Upload to AWS') {
+
+         stage('Upload given, original html file to AWS') {
               steps {
                   withAWS(region:'us-east-2') {
                   sh 'echo "Uploading to S3"'
@@ -24,5 +24,17 @@ pipeline {
                   }
               }
          }
+
+        stage('Test - upload modified test html file to AWS') {
+              steps {
+                  withAWS(region:'us-east-2') {
+                  sh 'echo "Uploading to S3"'
+                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'test.html', bucket:'nathan-udacity-pipeline')
+                  }
+              }
+         }
+
+
+
      }
 }
