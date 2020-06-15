@@ -1,23 +1,30 @@
-## ND9991 - C3 - Build CI/CD Pipelines, Monitoring, and Logging
-This repository provides the supporting material for the "ND9991 Cloud DevOps Nanodegree - C3 - Build CI/CD Pipelines, Monitoring, and Logging" course. This repo has two more branches, other than the master branch. 
+## Jenkins Pipeline on AWS
 
-* Blue/Green branch corresponds to the Blue/Green deployment strategy. Make sure that you checkout branches "blue" and "green" to see how blue/green deployment was performed in the course.
-* You can create any more branches for a multiple pipeline set-up, as directed in the demonstration video. 
+Deploy and run an instance on AWS, configure Jenkins,and create a pipeline to deploy a static website on S3.
 
-### Dependencies
-##### 1. AWS account
-You would require to have an AWS account to be able to build cloud infrastructure. Particularly, you will need to create S3 buckets, EC2 instances, and IAM users.
+### Requirements  
+Software Requirements: Latest Jenkins available, “tidy” linter.  
+Cloud Requirements: AWS Account, IAM username and password, EC2 Key pair
 
-#### 2. Jenkins on Ubuntu VM
-As a part of the project, you will need to install Jenkins and a few plugins to assist your requirements, as mentioned in the "Jenkins Pipelines on AWS --> Project Details" page in the classroom. 
-
-## Prerequisite
-1. A little knowledge of basic commands in Unix terminal.
-1. Understanding of software testing frameworks - JMeter and JUnit
-1. Understanding of deployment strategies 
+This project is created in Jenkins ver. 2.222.3 on Linux Mint 19.3 Cinnamon, with plug-in's including following.  
+Pipeline 		2.6  
+Pipeline: AWS Steps 	1.41  
+Blue Ocean 		1.23.2  
 
 
+### AWS Setup   
+A basic programming IAM role with EC2 and S3 access setup in AWS to avoid root access.  
+  <img src=" ">  
+  
+EC2 instance URL.  
+  <img src=" ">  
+[text](url)  
 
+# Running Jenkins  
 
+  <img src=" ">
+  
+# Working Pipeline 
 
+[text](url)  
 

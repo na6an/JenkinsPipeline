@@ -23,8 +23,9 @@ pipeline {
             }
               steps {
                   withAWS(region:'us-east-2') {
-                  sh 'echo "Uploading to S3"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'test.html', bucket:'nathan-udacity-pipeline')
+		  git clone https://github.com/na6an/CDevOps.git
+		  sh 'echo "Uploading P1 to S3"'
+		  s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, path:'P1_Deploy_Static_Website/', includePathPattern:'**/*'file:'test.html', bucket:'nathan-udacity-pipeline')
                   }
               }
          }
@@ -36,7 +37,7 @@ pipeline {
               steps {
                   withAWS(region:'us-east-2') {
                   sh 'echo "Uploading to S3"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'nathan-udacity-pipeline')
+                  s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'nathan-udacity-pipeline')
                   }
               }
          }
