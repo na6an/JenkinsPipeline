@@ -21,6 +21,7 @@ pipeline {
                 branch 'dev' 
                 }
               steps {
+			sh 'echo %PATH%'
 			sh 'chmod +x dev_script.sh'
             		sh './dev_script.sh'
                   withAWS(region:'us-east-2') {
