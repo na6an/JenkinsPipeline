@@ -23,7 +23,7 @@ pipeline {
               steps {
                   withAWS(region:'us-east-2') {
 			sh 'chmod +x dev_script.sh'
-            		sh 'dev_script.sh'
+            		sh './dev_script.sh'
             		s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, path:'P1_Deploy_Static_Website/', includePathPattern:'**/*', bucket:'nathan-udacity-pipeline')
             			}
               }
